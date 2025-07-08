@@ -1,35 +1,38 @@
-import { Activity, Trophy, Users } from "lucide-react"
+import { Activity, Trophy, Users } from "lucide-react";
 
-export default function Features  ()  {
+function FeatureCard({ icon, title, description }) {
   return (
-    <div>
-          <div className="bg-background-200 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Activity className="h-8 w-8 text-primary-400" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2  text-black">Personalized Training</h3>
-              <p className="text-onBackground">Custom workout plans tailored to your specific goals and fitness level.</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-primary-400" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2  text-black">Expert Trainers</h3>
-              <p className="text-onBackground">Get guidance from certified fitness professionals who care about your success.</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Trophy className="h-8 w-8 text-primary-400" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-black">Track Progress</h3>
-              <p className="text-onBackground">Monitor your achievements and stay motivated with detailed progress tracking.</p>
-            </div>
-          </div>
-        </div>
+    <div className="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-200 transition">
+      <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+        {icon}
       </div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </div>
-  )
+  );
+}
+export default function Features() {
+  return (
+    <section className="py-16 px-6 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-8">
+        <FeatureCard
+          icon={<Activity className="h-6 w-6 text-primary-600" />}
+          title="Precision Exercise Tracking"
+          description="Track every rep and movement with precision.
+
+"
+        />
+        <FeatureCard
+          icon={<Users className="h-6 w-6 text-primary-600" />}
+          title="Exercise History Database"
+          description="Track every past workout—find any session fast"
+        />
+        <FeatureCard
+          icon={<Trophy className="h-6 w-6 text-primary-600" />}
+          title="Equipment-Specific Tracking"
+          description="Universal exercise tracking for any workout"
+        />
+      </div>
+    </section>
+  );
 }

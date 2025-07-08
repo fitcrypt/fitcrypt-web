@@ -1,48 +1,42 @@
 import { GlobeLock } from "lucide-react";
-import React from "react";
 
 export default function AccessAnywhereSection() {
   return (
-    <div className="flex items-center text-gray-900  flex-col md:flex-row justify-between px-6 md:px-16 py-12  rounded-3xl shadow-xl max-w-7xl mx-auto  bg-primary-200">
-      {/* Left Text Section */}
-      <div className="md:w-1/2 text-center md:text-left">
-        <div className="flex items-center gap-2 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold ">
-            Access from Anywhere
-          </h2>
-          <GlobeLock className="text-primary-700 w-8 h-8" />
+       <section className="py-16 px-6 text-gray-800 bg-white">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <div className="lg:w-1/2 order-2 lg:order-1">
+            <img 
+              src="https://res.cloudinary.com/dyqibxntm/image/upload/v1751350075/mobile_ivjisv.jpg" 
+              alt="Multi-device access"
+              className="rounded-xl shadow-lg"
+            />
+          </div>
+          <div className="lg:w-1/2 space-y-6 order-1 lg:order-2">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-primary-500/10 rounded-lg">
+                <GlobeLock className="h-6 w-6 text-primary-400" />
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900">Access Anywhere</h2>
+            </div>
+            <p className="text-gray-800">
+              Your fitness journey stays with you across all devices. Pick up where you left off whether you're on your phone, tablet, or computer.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary-400"></div>
+                <span className="text-gray-700">End-to-end encrypted sync between devices</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary-400"></div>
+                <span className="text-gray-700">No installations needed - works in any browser</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary-400"></div>
+                <span className="text-gray-700">Automatic updates with new features</span>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center md:hidden ">
-          <img
-            src="https://res.cloudinary.com/dyqibxntm/image/upload/v1751350075/mobile_ivjisv.jpg"
-            className="rounded-xl  shadow-lg "
-          />
-        </div>
-        <p className="text-lg text-gray-800 mb-4">
-          Empower your journey from any device — phone, tablet, or laptop —
-          directly through your browser.
-          <br />
-          No downloads, no installs. You just need a web browser.
-        </p>
-        <p className="text-md text-gray-900">
-          <strong> Your data, your sanctuary.</strong>
-        </p>
-        <p className="text-md text-gray-800">
-          Protected by end-to-end encryption, your progress stays private and
-          secure — even as you move across devices.
-          <br />
-          Freedom, presence, and peace of mind — wherever you are.
-        </p>
-      </div>
-
-      {/* Right Image Section */}
-      <div className="md:w-1/2 mb-8 md:mb-0 md:flex justify-center hidden">
-        <img
-          src="https://res.cloudinary.com/dyqibxntm/image/upload/v1751350075/mobile_ivjisv.jpg"
-          className="rounded-xl  shadow-lg "
-        />
-      </div>
-    </div>
+      </section>
   );
 }

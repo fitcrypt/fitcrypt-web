@@ -1,88 +1,151 @@
-import React from "react";
+import CTA from "./CTA";
 
 export default function AboutUsSection() {
   return (
-    <div className="min-h-screen bg-background-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div
-        className={`py-40 px-4 sm:px-6 lg:px-8 bg-barbell bg-cover bg-no-repeat bg-[center_calc(100%)] bg-[url('https://res.cloudinary.com/dyqibxntm/image/upload/v1751349693/barbell_nfbpd8.jpg')]`}
-      >
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-onPrimary mb-6">
-            Privacy-First Fitness Tracking
+      <div className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background image with subtle overlay */}
+        <div className="absolute inset-0">
+          <img
+            src="https://res.cloudinary.com/dyqibxntm/image/upload/v1751349693/barbell_nfbpd8.jpg"
+            alt="Fitness background"
+            className="w-full h-full object-cover brightness-75"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-base font-semibold text-white tracking-wide uppercase bg-primary-700/80 px-4 py-1 rounded-full shadow">
+              About Us
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+            Fitness, Reimagined for Privacy
           </h1>
-          <p className="text-xl text-onPrimary max-w-3xl mx-auto">
-            Your health data belongs to you. We're just here to help you make
-            the most of it.
+          <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            We empower you to own your health journey—no compromises, no data
+            selling, just results. Experience fitness technology that puts your
+            privacy first.
           </p>
         </div>
       </div>
-
-      {/* Mission Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-onBackground mb-4">
-            Our Mission
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-20">
+          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary-100 text-primary-800 rounded-full mb-4">
+            Our Philosophy
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Redefining Fitness Technology
           </h2>
-          <div className="h-1 w-20 bg-primary-500 mx-auto mb-8"></div>
-          <p className="text-lg text-onBackground max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-300 mx-auto mb-8 rounded-full"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We're building a fitness platform that respects your privacy while
-            helping you achieve your health goals. Unlike other services, we
-            never sell or share your data.
+            delivering exceptional results. Your data never leaves your control.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12">
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <div className="text-primary-500 text-4xl mb-4">🔒</div>
-            <h3 className="text-xl font-semibold text-onBackground mb-3">
-              Client-Side Encryption
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="w-16 h-16 bg-primary-50 rounded-lg flex items-center justify-center mb-6">
+              <svg
+                className="w-8 h-8 text-primary-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              End-to-End Encryption
             </h3>
-            <p className="text-onBackground">
-              Your data is encrypted before it leaves your device. We can't read
-              it, and neither can anyone else.
+            <p className="text-gray-600 leading-relaxed">
+              Your data is encrypted before it leaves your device. Not even our
+              team can access your private information.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <div className="text-primary-500 text-4xl mb-4">🏋️</div>
-            <h3 className="text-xl font-semibold text-onBackground mb-3">
-              Personalized Programs
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="w-16 h-16 bg-primary-50 rounded-lg flex items-center justify-center mb-6">
+              <svg
+                className="w-8 h-8 text-primary-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              Smart Training Plans
             </h3>
-            <p className="text-onBackground">
-              Choose from science-backed training programs tailored to your
-              fitness level and goals.
+            <p className="text-gray-600 leading-relaxed">
+              AI-powered programs adapt to your progress, preferences, and
+              feedback for optimal results.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <div className="text-primary-500 text-4xl mb-4">📊</div>
-            <h3 className="text-xl font-semibold text-onBackground mb-3">
-              No Data Selling
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="w-16 h-16 bg-primary-50 rounded-lg flex items-center justify-center mb-6">
+              <svg
+                className="w-8 h-8 text-primary-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              Zero Data Sharing
             </h3>
-            <p className="text-onBackground">
-              We don't monetize your personal information. Your privacy is our
-              priority, not a product.
+            <p className="text-gray-600 leading-relaxed">
+              We don't sell, share, or monetize your information. Your privacy
+              is our product promise.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="bg-gray-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <p className="text-4xl font-bold text-primary-400 mb-2">10K+</p>
+              <p className="text-gray-300">Active Users</p>
+            </div>
+            <div className="p-6">
+              <p className="text-4xl font-bold text-primary-400 mb-2">99.9%</p>
+              <p className="text-gray-300">Uptime Reliability</p>
+            </div>
+            <div className="p-6">
+              <p className="text-4xl font-bold text-primary-400 mb-2">0</p>
+              <p className="text-gray-300">Data Breaches</p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="bg-secondaryBackground py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-secondary mb-6">
-            Ready to take control of your fitness journey?
-          </h2>
-          <p className="text-onPrimary mb-8 max-w-3xl mx-auto">
-            Join thousands of others who are achieving their goals without
-            compromising their privacy.
-          </p>
-          <button className="bg-primary-500 hover:bg-primary-600 text-onPrimary font-bold py-3 px-8 rounded-full transition duration-300">
-            Get Started - It's Free
-          </button>
-        </div>
-      </div>
+      <CTA />
     </div>
   );
 }
