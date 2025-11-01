@@ -1,15 +1,17 @@
 import React from "react";
 
 function Button({
-  backgroundColor = "bg-primary-500",
-  textColor = "text-onPrimary",
-  hoverClass = "hover:bg-primary-600",
+  backgroundColor = "bg-transparent",
+  textColor = "text-gray-700 dark:text-gray-300",
+  hoverClass = "hover:bg-gray-100 dark:hover:bg-gray-800",
   text = "",
   className = "",
+  onClick,
 }) {
   return (
     <button
-      className={`${backgroundColor} ${textColor} ${hoverClass} cursor-pointer px-4 py-2 rounded-full ${className}`}
+      onClick={onClick}
+      className={`${backgroundColor} ${textColor} ${hoverClass} cursor-pointer px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 ${className}`}
     >
       {text}
     </button>
