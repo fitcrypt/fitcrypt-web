@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Activity, Trophy, Users, Zap, Shield, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
 
