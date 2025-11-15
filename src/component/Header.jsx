@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiMoon, FiSun } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
-import spaceLogo from "../assets/space_logo_100.svg";
+import Logo from "../assets/space_logo_100.svg";
 import Button from "./Button";
 import { useTheme } from "../context/ThemeContext";
 
@@ -51,7 +51,7 @@ function Header() {
             className="absolute h-full flex items-center top-0"
           >
             <img
-              src={spaceLogo}
+              src={Logo}
               alt="logo"
               className="h-full object-contain p-2"
             />
@@ -158,7 +158,7 @@ function Header() {
               {/* Header */}
               <div className="flex justify-between items-center h-20 px-6 border-b border-gray-200 dark:border-gray-800">
                 <div className="flex items-center gap-3">
-                  <img src={spaceLogo} alt="logo" className="h-10 w-10 object-contain" />
+                  <img src={Logo} alt="logo" className="h-10 w-10 object-contain" />
                   <span className="font-black text-xl text-gray-900 dark:text-white tracking-tight">
                     FitCrypt
                   </span>
