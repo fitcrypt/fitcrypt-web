@@ -1,156 +1,127 @@
-import React from "react";
-import logo from "../assets/space_logo_100.svg";
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Clock, Rocket, Mail } from "lucide-react";
+import { Timer, Bell, ArrowRight } from "lucide-react";
 
-function ComingSoon() {
+export default function ComingSoon() {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubmitted(true);
+      setEmail("");
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col justify-start md:justify-center items-center bg-gradient-to-br from-orange-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4 md:p-8 pt-24 md:pt-8 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
+    <div className="min-h-screen bg-white dark:bg-gray-950 flex items-center justify-center p-4 pt-24 md:pt-32 relative overflow-hidden transition-colors duration-300">
+      {/* Abstract Background Shapes */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <motion.div 
+          animate={{ 
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
-            opacity: [0.05, 0.1, 0.05],
           }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-br from-orange-500 to-purple-500 rounded-full blur-3xl"
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute -top-1/2 -left-1/2 w-full h-full bg-primary-100/30 dark:bg-primary-900/10 rounded-full blur-3xl"
         />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.5, 1],
             rotate: [0, -90, 0],
-            opacity: [0.05, 0.1, 0.05],
           }}
-          transition={{ duration: 25, repeat: Infinity }}
-          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-blue-500 to-green-500 rounded-full blur-3xl"
+          transition={{ 
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-orange-100/30 dark:bg-orange-900/10 rounded-full blur-3xl"
         />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 flex flex-col items-center space-y-8 md:space-y-12 max-w-3xl text-center w-full"
-      >
-        {/* Logo with Glow Effect */}
+      <div className="max-w-4xl w-full relative z-10 text-center">
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
-          className="relative"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
-          <img
-            src={logo}
-            className="h-20 w-20 md:h-32 md:w-32 relative z-10"
-            alt="Logo"
-            style={{ filter: "drop-shadow(0 8px 24px rgba(253, 105, 52, 0.3))" }}
-          />
-        </motion.div>
-
-        {/* Heading with Gradient */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="space-y-4"
-        >
-          <div className="flex items-center justify-center gap-2 md:gap-3 mb-4">
-            <Sparkles className="w-5 h-5 md:w-8 md:h-8 text-orange-500 dark:text-orange-400" />
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black bg-gradient-to-r from-orange-600 via-purple-600 to-blue-600 dark:from-orange-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-              Coming Soon
-            </h1>
-            <Sparkles className="w-5 h-5 md:w-8 md:h-8 text-orange-500 dark:text-orange-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-medium text-sm mb-8 border border-primary-100 dark:border-primary-800">
+            <Timer className="w-4 h-4" />
+            <span>Coming Soon</span>
           </div>
-          
-          <motion.p
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="text-base md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium max-w-2xl px-4"
-          >
-            We're working on something <span className="text-orange-600 dark:text-orange-400 font-bold">extraordinary</span>. 
-            Get ready for an amazing experience!
-          </motion.p>
+
+          <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+            Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-orange-500">Extraordinary</span>
+            <br /> Is In The Works
+          </h1>
+
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We're crafting a new challenge experience that will push your limits. 
+            Get ready to transform your fitness journey with community-driven competitions.
+          </p>
+
+          {!isSubmitted ? (
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto relative">
+              <div className="relative flex items-center">
+                <Bell className="absolute left-4 w-5 h-5 text-gray-400" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="w-full pl-12 pr-36 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg text-gray-900 dark:text-white placeholder-gray-400 transition-all"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="absolute right-2 top-2 bottom-2 bg-primary-600 hover:bg-primary-700 text-white px-6 rounded-full font-medium transition-colors flex items-center gap-2"
+                >
+                  Notify Me
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-sm text-gray-500 dark:text-gray-500 mt-4">
+                We respect your privacy. No spam, ever.
+              </p>
+            </form>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 px-8 py-6 rounded-2xl inline-block border border-green-100 dark:border-green-800"
+            >
+              <p className="text-lg font-bold mb-1">You're on the list!</p>
+              <p className="text-sm opacity-90">We'll let you know when we launch.</p>
+            </motion.div>
+          )}
         </motion.div>
 
-        {/* Feature Cards */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="grid md:grid-cols-3 gap-4 md:gap-6 w-full mt-4 md:mt-8"
-        >
+        {/* Feature Teasers */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
           {[
-            { icon: Clock, title: "Launching Soon", desc: "Stay tuned for updates" },
-            { icon: Rocket, title: "New Features", desc: "Built for you" },
-            { icon: Sparkles, title: "Amazing UI", desc: "Modern & clean" },
-          ].map((feature, index) => (
+            { title: "Global Leaderboards", desc: "Compete with athletes worldwide" },
+            { title: "Exclusive Rewards", desc: "Earn badges and premium perks" },
+            { title: "Team Challenges", desc: "Form squads and win together" }
+          ].map((item, i) => (
             <motion.div
-              key={index}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="card-modern p-6 md:p-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700"
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + (i * 0.1) }}
+              className="p-6 rounded-2xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-100 dark:border-gray-800"
             >
-              <div className="flex flex-col items-center space-y-3 md:space-y-4">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-purple-500 flex items-center justify-center">
-                  <feature.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white">
-                  {feature.title}
-                </h3>
-                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
-                  {feature.desc}
-                </p>
-              </div>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{item.desc}</p>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Notify Button */}
-        {/* <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.3, duration: 0.6 }}
-          className="mt-8"
-        >
-          <button className="btn-primary group">
-            <Mail className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-            Notify Me When It's Ready
-          </button>
-        </motion.div> */}
-
-        {/* Progress Indicator */}
-        <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="w-full max-w-md mt-4 md:mt-8 px-4"
-        >
-          <div className="text-sm text-gray-600 dark:text-gray-400 mb-3 font-medium">
-            Development Progress
-          </div>
-          <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "75%" }}
-              transition={{ delay: 1.7, duration: 1.2, ease: "easeOut" }}
-              className="h-full bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 rounded-full relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
-            </motion.div>
-          </div>
-          <div className="text-xs text-gray-500 dark:text-gray-500 mt-2 text-right font-semibold">
-            75% Complete
-          </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default ComingSoon;

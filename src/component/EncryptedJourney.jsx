@@ -1,15 +1,11 @@
-import { ChevronRight, LockKeyhole, Shield } from "lucide-react";
+/* eslint-disable no-unused-vars */
+import { ChevronRight, LockKeyhole, Shield, FileKey, ServerOff } from "lucide-react";
 import { motion } from "framer-motion";
 
 function EncryptedJourney() {
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-white transition-colors duration-300 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section className="py-24 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm transition-colors duration-300 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,66 +14,61 @@ function EncryptedJourney() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 text-sm font-semibold bg-primary-600/20 text-primary-400 rounded-full mb-6">
-            PRIVACY FIRST
-          </span>
-          <h2 className="heading-lg mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-white to-primary-400">
-              Your Data, Your Control
-            </span>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+            Your Data, <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-orange-500">Your Control</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Military-grade encryption meets intuitive design
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+            Military-grade encryption meets intuitive design. We believe privacy is a fundamental right, not a feature.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-10"
           >
-            <div className="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-500/10">
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 p-4 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <LockKeyhole className="h-7 w-7 text-white" />
+            <div className="group">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-2xl border border-primary-100 dark:border-primary-800">
+                  <FileKey className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">
-                    Military-Grade Encryption
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    End-to-End Encryption
                   </h3>
-                  <p className="text-gray-400 leading-relaxed text-lg">
-                    Every rep, set, and health metric is encrypted before it
-                    leaves your device. We physically can't access your data.
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Every rep, set, and health metric is encrypted on your device before it ever touches our servers. We physically cannot access your data.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-500/10">
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 p-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <Shield className="h-7 w-7 text-white" />
+            <div className="group">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-2xl border border-orange-100 dark:border-orange-800">
+                  <ServerOff className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
                     Zero-Knowledge Architecture
                   </h3>
-                  <p className="text-gray-400 leading-relaxed text-lg">
-                    Our servers never see your raw data. Everything is encrypted
-                    with keys only you control.
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Our systems are designed so that we know nothing about your fitness journey. Your keys, your data.
                   </p>
                 </div>
               </div>
             </div>
 
-            <button className="mt-6 btn-primary bg-white text-gray-900 hover:bg-gray-100 flex items-center gap-2 text-lg group shadow-2xl">
-              Learn How It Works
-              <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="pt-4">
+              <button className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 group shadow-lg shadow-gray-900/20 dark:shadow-white/10">
+                Learn How It Works
+                <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </motion.div>
 
           {/* Workout Card */}
@@ -88,51 +79,47 @@ function EncryptedJourney() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-gray-800/80 backdrop-blur-sm p-10 rounded-3xl border border-gray-700/50 shadow-2xl">
+            {/* Decorative Elements */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary-500/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
+
+            <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-2xl shadow-gray-200/50 dark:shadow-black/50">
               <div className="flex justify-between items-center mb-8">
-                <h3 className="text-2xl font-bold">
-                  Today's Encrypted Workout
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  Today's Workout
                 </h3>
-                <div className="p-3 bg-primary-900/30 rounded-2xl">
-                  <LockKeyhole className="h-5 w-5 text-primary-400" />
+                <div className="flex items-center gap-2 text-xs font-mono text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-3 py-1.5 rounded-full border border-green-100 dark:border-green-800">
+                  <LockKeyhole className="h-3 w-3" />
+                  ENCRYPTED
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {[
-                  { name: "Bench Press", muscle: "Chest, Triceps", stats: "4×8 @ 60kg" },
-                  { name: "Shoulder Press", muscle: "Shoulders", stats: "3×10 @ 25kg" },
-                  { name: "Deadlifts", muscle: "Back, Legs", stats: "5×5 @ 100kg" }
+                  { name: "Bench Press", stats: "4×8 @ 60kg" },
+                  { name: "Shoulder Press", stats: "3×10 @ 25kg" },
+                  { name: "Deadlifts", stats: "5×5 @ 100kg" }
                 ].map((exercise, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 + (i * 0.1) }}
-                    viewport={{ once: true }}
-                    className="flex justify-between items-center p-5 bg-gray-700/50 rounded-2xl hover:bg-gray-700/70 transition-all duration-300 group cursor-pointer"
+                    className="flex justify-between items-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700/50"
                   >
-                    <div>
-                      <p className="font-bold text-lg">{exercise.name}</p>
-                      <p className="text-sm text-gray-400">{exercise.muscle}</p>
-                    </div>
-                    <span className="px-4 py-2 bg-gradient-to-r from-primary-900/40 to-primary-800/40 text-primary-300 rounded-full font-semibold group-hover:from-primary-800/50 group-hover:to-primary-700/50 transition-all">
+                    <span className="font-medium text-gray-900 dark:text-gray-200">{exercise.name}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 font-mono">
                       {exercise.stats}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-gray-700/50 flex justify-between items-center">
-                <p className="text-xs text-gray-400 font-mono bg-gray-900/50 px-3 py-2 rounded-lg">
-                  🔒 Encrypted: AES-256
-                </p>
-                <p className="text-xs text-gray-400">Last synced: Just now</p>
+              <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-xs text-gray-400 dark:text-gray-500 font-mono">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  AES-256 Encryption
+                </div>
+                <span>Synced just now</span>
               </div>
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -z-10 top-6 left-6 w-full h-full rounded-3xl border-2 border-primary-400/20"></div>
           </motion.div>
         </div>
       </div>
@@ -141,3 +128,4 @@ function EncryptedJourney() {
 }
 
 export default EncryptedJourney;
+

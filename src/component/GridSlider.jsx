@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion } from "framer-motion";
-import { Autoplay  } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css/effect-fade";
 import GridSlides from "./GridSlides.jsx";
 
 export default function GridSlider({
@@ -11,30 +12,25 @@ export default function GridSlider({
 }) {
   return (
     <Swiper
-      modules={[Autoplay]}
+      modules={[Autoplay, EffectFade]}
       loop={true}
-      speed={1000}
+      speed={800}
+      effect="fade"
+      fadeEffect={{ crossFade: true }}
       autoplay={{
-        delay: 2000,
+        delay: 3000,
         disableOnInteraction: false,
       }}
-      spaceBetween={30}
+      spaceBetween={0}
       slidesPerView={1}
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-      className={`${className} mySwiper`}
+      className={`${className} rounded-3xl`}
     >
       {slides.map((card, i) => (
         <SwiperSlide key={i}>
-          <motion.div
-            className=" h-full w-full flex items-center justify-center shadow-lg"
-            animate={{
-              scale: activeIndex === i ? 1 : 0.6,
-              opacity: activeIndex === i ? 1 : 0.6,
-            }}
-            transition={{ duration: 1 }}
-          >
+          <div className="h-full w-full">
             <GridSlides card={card} />
-          </motion.div>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
