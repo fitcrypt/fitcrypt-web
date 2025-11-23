@@ -1,48 +1,48 @@
 import { useState } from "react";
 import "swiper/css";
-import Button from "./Button.jsx";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import GridSlider from "./GridSlider.jsx";
 import SingleSlider from "./SingleSlider.jsx";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const slides = [
   {
     description:
-      "01 Embrace movement for a healthier you. get motivated, stay active, and reap the benefits of a vibrant, well-nurtured body",
+      "Embrace movement for a healthier you. Get motivated, stay active, and reap the benefits of a vibrant, well-nurtured body.",
     image:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349721/running_q7gtsl.jpg",
     verticalImage:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349720/explosiveJump_lbqulc.jpg",
-    caption: "Fuel the Fire, Keep Moving",
+    caption: "Fuel the Fire",
   },
   {
     description:
-      "02 Energize your lifestyle, get motivated, stay active, and reap the benefits of a vibrant, well-nurtured body",
+      "Energize your lifestyle. Find balance between strength and flexibility for a complete fitness journey.",
     image:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349721/yoga_ne7z6f.jpg",
     verticalImage:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349720/JumpingJacks_dwtsau.jpg",
-    caption: "Balance Grace with Grit",
+    caption: "Balance & Grace",
   },
   {
     description:
-      "01 Embrace movement for a healthier you. get motivated, stay active, and reap the benefits of a vibrant, well-nurtured body",
+      "Push your limits. Challenge yourself with high-intensity workouts designed to build endurance and power.",
     image:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349721/ropeClimbing_sj7r2u.jpg",
     verticalImage:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349720/flatBench_vivxrf.jpg",
-    caption: "Rise Higher, Press Stronger",
+    caption: "Rise Higher",
   },
   {
     description:
-      "02 Energize your lifestyle, get motivated, stay active, and reap the benefits of a vibrant, well-nurtured body",
+      "Build strength that lasts. Focus on form and consistency to develop a powerful physique.",
     image:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349720/lunges_pkyyyj.jpg",
     verticalImage:
       "https://res.cloudinary.com/dyqibxntm/image/upload/v1751349720/bicepsCurl_pvjcyf.jpg",
-    caption: "Move with Purpose, Lift with Power",
+    caption: "Lift with Power",
   },
 ];
 
@@ -50,73 +50,61 @@ export default function WorkoutSlider({ className }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className={`max-w-7xl mx-auto ${className}`}>
-        <div className="h-minus-header max-w-7xl grid grid-cols-6 gap-4 p-2 place-items-center">
-          {/* LEFT */}
-          <div className="md:col-span-2 col-span-6 w-full h-full md:h-[70vh]">
-            <div className="flex flex-col justify-between h-full w-full gap-6 md:gap-8">
-              {/* Text Content */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex flex-col gap-6 md:gap-8"
-              >
-                <h1 className="heading-lg text-gray-900 dark:text-white md:text-left text-center leading-[1.1]">
-                  Move to
-                  <br />
-                  <span className="gradient-text">Maintain</span> your
-                  <br />
-                  Health
-                </h1>
+    <div className="bg-transparent transition-colors duration-300 py-24">
+      <div className={`max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 ${className}`}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* LEFT CONTENT */}
+          <div className="lg:col-span-4 flex flex-col justify-center h-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight tracking-tight">
+                Move to
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-orange-500">Maintain</span>
+              </h2>
 
-                {/* Mobile Slider */}
-                <div className="w-full md:hidden h-[40vh]">
-                  <SingleSlider slides={slides} />
-                </div>
+              {/* Mobile Slider */}
+              <div className="block lg:hidden w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                <SingleSlider slides={slides} />
+              </div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-lg md:text-xl leading-relaxed">
-                  Energize your lifestyle, embrace movement for a healthier you.
-                  Get motivated, stay active, and achieve your goals.
-                </p>
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Energize your lifestyle, embrace movement for a healthier you.
+                Get motivated, stay active, and achieve your goals.
+              </p>
 
-                <div className="mt-4 w-full flex justify-center md:justify-start">
-                  <Link to="/about-us" className="inline-block">
-                    <button className="btn-primary text-lg">
-                      About Us
-                    </button>
-                  </Link>
-                </div>
-              </motion.div>
+              <Link to="/about-us" className="inline-flex">
+                <button className="btn-primary flex items-center gap-2 group">
+                  About Us
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
 
               {/* Slider Indicators (Desktop) */}
-              <div className="hidden md:block w-full">
-                <div className="grid grid-cols-4 gap-2">
-                  {slides.map((_, i) => (
-                    <div
-                      key={i}
-                      className="relative h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-primary-500 dark:bg-primary-400 rounded-full"
-                        initial={{ scaleX: 0 }}
-                        animate={{
-                          scaleX: i === activeIndex ? 1 : 0,
-                          transformOrigin: i === activeIndex ? "left" : "right",
-                        }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="hidden lg:flex gap-3 pt-8">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveIndex(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === activeIndex 
+                        ? "w-12 bg-gray-900 dark:bg-white" 
+                        : "w-4 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* RIGHT */}
-          <div className="hidden md:block col-span-4 w-full h-[calc(70vh)]  ">
+          {/* RIGHT SLIDER (Desktop) */}
+          <div className="hidden lg:block lg:col-span-8 h-[600px] rounded-3xl overflow-hidden">
             <GridSlider
               className="h-full w-full"
               activeIndex={activeIndex}
@@ -130,25 +118,3 @@ export default function WorkoutSlider({ className }) {
   );
 }
 
-function GridSliderBar({ className = "", activeIndex }) {
-  return (
-    <div className={`grid grid-cols-4 gap-2 w-full ${className}`}>
-      {slides.map((_, i) => (
-        <div
-          key={i}
-          className="relative h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700"
-        >
-          <motion.span
-            className="absolute inset-0 bg-primary-500 dark:bg-primary-400"
-            initial={{ scaleX: 0, transformOrigin: "left" }}
-            animate={{
-              scaleX: i === activeIndex ? 1 : 0,
-              transformOrigin: i === activeIndex ? "left" : "right",
-            }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          />
-        </div>
-      ))}
-    </div>
-  );
-}

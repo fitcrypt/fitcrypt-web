@@ -1,39 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Banner() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-orange-50/30 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-colors duration-300">
-      {/* Modern geometric background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 -left-40 w-[500px] h-[500px] bg-gradient-to-br from-orange-400/20 to-orange-600/20 dark:from-orange-900/20 dark:to-orange-800/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 -right-40 w-[500px] h-[500px] bg-gradient-to-br from-orange-500/20 to-pink-500/20 dark:from-orange-800/20 dark:to-pink-900/20 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 relative z-10">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badges */}
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-3 mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-semibold">
-              <Sparkles className="w-4 h-4" />
-              Coming Soon
-            </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 rounded-full text-sm font-semibold">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
-              </span>
-              Transform Your Fitness
-            </div>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Coming Soon</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -41,12 +26,12 @@ export default function Banner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="heading-xl text-gray-900 dark:text-white mb-6 leading-[1.1]"
+            className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 tracking-tight"
           >
             Your Fitness Journey,
             <br />
-            <span className="gradient-text">
-              Truly Private
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-orange-500">
+              Truly Private.
             </span>
           </motion.h1>
 
@@ -55,7 +40,7 @@ export default function Banner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
           >
             Track workouts, achieve goals, and maintain privacy with
             military-grade encryption. Your data, your control.
@@ -69,12 +54,12 @@ export default function Banner() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/about-us">
-              <button className="btn-primary flex items-center gap-2 text-lg group">
+              <button className="btn-primary flex items-center gap-2 group">
                 Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <button className="btn-secondary text-lg">
+            <button className="btn-secondary">
               Watch Demo
             </button>
           </motion.div>
@@ -84,19 +69,25 @@ export default function Banner() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-400"
+            className="mt-20 pt-8 border-t border-gray-100 dark:border-gray-900 flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm text-gray-500 dark:text-gray-500"
           >
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              <span className="font-medium">End-to-End Encrypted</span>
+              <span>End-to-End Encrypted</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
               </svg>
-              <span className="font-medium">Zero Data Selling</span>
+              <span>Zero Data Selling</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Open Source</span>
             </div>
           </motion.div>
         </div>
@@ -104,3 +95,4 @@ export default function Banner() {
     </section>
   );
 }
+

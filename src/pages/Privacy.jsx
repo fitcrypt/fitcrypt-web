@@ -1,136 +1,176 @@
 import React from "react";
-import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export default function Privacy() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 text-gray-900">
-      <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
+    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300 relative overflow-hidden">
+      {/* Abstract Background Shapes */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute top-0 -left-1/4 w-full h-full bg-primary-100/30 dark:bg-primary-900/10 rounded-full blur-3xl"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.5, 1],
+            rotate: [0, -90, 0],
+          }}
+          transition={{ 
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute bottom-0 -right-1/4 w-full h-full bg-orange-100/30 dark:bg-orange-900/10 rounded-full blur-3xl"
+        />
+      </div>
 
-      <p className="mb-6">
-        Thank you for choosing to use <strong>FitCrypt</strong> (“we”, “our”, or
-        “us”). Your privacy is critically important to us. This Privacy Policy
-        explains how we collect, use, store, and protect your information when
-        you use our fitness app.
-      </p>
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 md:pt-48 pb-24 relative z-10 text-gray-900 dark:text-gray-100">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-black mb-12 tracking-tight">
+            Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-orange-500">Policy</span>
+          </h1>
 
-      {/* Section 1 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">1. Data We Collect</h2>
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <p className="mb-8 text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+              Thank you for choosing to use <strong>FitCrypt</strong> (“we”, “our”, or
+              “us”). Your privacy is critically important to us. This Privacy Policy
+              explains how we collect, use, store, and protect your information when
+              you use our fitness app.
+            </p>
 
-      <h3 className="text-lg font-semibold mb-2">
-        a. Personally Identifiable Information (PII):
-      </h3>
-      <ul className="list-disc pl-6 mb-4 space-y-1">
-        <li>Name</li>
-        <li>Email address</li>
-        <li>Phone number</li>
-        <li>Time zone</li>
-        <li>Payment information (if applicable)</li>
-      </ul>
+            {/* Section 1 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">1. Data We Collect</h2>
 
-      <h3 className="text-lg font-semibold mb-2">
-        b. Encrypted Health Data (Client-Side Encrypted):
-      </h3>
-      <p className="mb-4">
-        All your health-related data — including workout logs, training plans,
-        goals, progress, etc. — is encrypted <strong>on your device</strong>{" "}
-        using <strong>client-side encryption</strong>. We cannot read this data
-        and cannot recover it if you lose access to your credentials.
-      </p>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+              a. Personally Identifiable Information (PII):
+            </h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Time zone</li>
+              <li>Payment information (if applicable)</li>
+            </ul>
 
-      <h3 className="text-lg font-semibold mb-2">c. Anonymized Usage Data:</h3>
-      <p className="mb-4">
-        We collect aggregated, anonymous data like program popularity and
-        feature usage to improve our app. This data cannot be linked to you.
-      </p>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+              b. Encrypted Health Data (Client-Side Encrypted):
+            </h3>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              All your health-related data — including workout logs, training plans,
+              goals, progress, etc. — is encrypted <strong>on your device</strong>{" "}
+              using <strong>client-side encryption</strong>. We cannot read this data
+              and cannot recover it if you lose access to your credentials.
+            </p>
 
-      {/* Section 2 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        2. How We Use Your Data
-      </h2>
-      <ul className="list-disc pl-6 mb-4 space-y-1">
-        <li>To provide core app functionality</li>
-        <li>To personalize your experience</li>
-        <li>To offer support and handle account issues</li>
-        <li>To analyze anonymized patterns for improvement</li>
-        <li>To process payments (if applicable)</li>
-      </ul>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">c. Anonymized Usage Data:</h3>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              We collect aggregated, anonymous data like program popularity and
+              feature usage to improve our app. This data cannot be linked to you.
+            </p>
 
-      {/* Section 3 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        3. Client-Side Encryption Explained
-      </h2>
-      <p className="mb-4">
-        Client-side encryption ensures that your health data is encrypted before
-        it leaves your device. Only you can decrypt it using your credentials.
-        We cannot read or recover this data.
-      </p>
+            {/* Section 2 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+              2. How We Use Your Data
+            </h2>
+            <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>To provide core app functionality</li>
+              <li>To personalize your experience</li>
+              <li>To offer support and handle account issues</li>
+              <li>To analyze anonymized patterns for improvement</li>
+              <li>To process payments (if applicable)</li>
+            </ul>
 
-      {/* Section 4 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        4. Data Sharing and Third Parties
-      </h2>
-      <p className="mb-4">
-        We do not sell or share your personal or encrypted data. We may use
-        secure third-party services for storage, analytics (aggregated only),
-        and payment processing.
-      </p>
+            {/* Section 3 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+              3. Client-Side Encryption Explained
+            </h2>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              Client-side encryption ensures that your health data is encrypted before
+              it leaves your device. Only you can decrypt it using your credentials.
+              We cannot read or recover this data.
+            </p>
 
-      {/* Section 5 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">5. Your Rights</h2>
-      <ul className="list-disc pl-6 mb-4 space-y-1">
-        <li>Access your stored personal data</li>
-        <li>Delete your account and encrypted data</li>
-        <li>Export your encrypted data (on request)</li>
-      </ul>
-      <p className="mb-4 text-sm italic">
-        Note: Encrypted data is unrecoverable without your decryption
-        credentials.
-      </p>
+            {/* Section 4 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+              4. Data Sharing and Third Parties
+            </h2>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              We do not sell or share your personal or encrypted data. We may use
+              secure third-party services for storage, analytics (aggregated only),
+              and payment processing.
+            </p>
 
-      {/* Section 6 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        6. Security Practices
-      </h2>
-      <ul className="list-disc pl-6 mb-4 space-y-1">
-        <li>End-to-end encryption of health data</li>
-        <li>HTTPS-only communication</li>
-        <li>Regular security audits</li>
-        <li>Client-side key management</li>
-      </ul>
+            {/* Section 5 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">5. Your Rights</h2>
+            <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>Access your stored personal data</li>
+              <li>Delete your account and encrypted data</li>
+              <li>Export your encrypted data (on request)</li>
+            </ul>
+            <p className="mb-6 text-sm italic text-gray-500">
+              Note: Encrypted data is unrecoverable without your decryption
+              credentials.
+            </p>
 
-      {/* Section 7 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">7. Payment Data</h2>
-      <p className="mb-4">
-        Payments are processed through PCI-compliant third-party providers. We
-        do not store your payment details on our servers.
-      </p>
+            {/* Section 6 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+              6. Security Practices
+            </h2>
+            <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>End-to-end encryption of health data</li>
+              <li>HTTPS-only communication</li>
+              <li>Regular security audits</li>
+              <li>Client-side key management</li>
+            </ul>
 
-      {/* Section 8 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        8. Children’s Privacy
-      </h2>
-      <p className="mb-4">
-        Our app is not intended for children under 13. We do not knowingly
-        collect personal data from minors.
-      </p>
+            {/* Section 7 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">7. Payment Data</h2>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              Payments are processed through PCI-compliant third-party providers. We
+              do not store your payment details on our servers.
+            </p>
 
-      {/* Section 9 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        9. Changes to This Policy
-      </h2>
-      <p className="mb-4">
-        We may update this policy as necessary. You will be notified of
-        significant changes via email or in-app notification.
-      </p>
+            {/* Section 8 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+              8. Children’s Privacy
+            </h2>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              Our app is not intended for children under 13. We do not knowingly
+              collect personal data from minors.
+            </p>
 
-      {/* Section 10 */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">10. Contact Us</h2>
-      <p className="mb-2">If you have any questions, contact us at:</p>
-      <p className="mb-1">
-        <strong>
-          <a href="mailto:fitcrypt.app@gmail.com">fitcrypt.app@gmail.com</a>
-        </strong>
-      </p>
+            {/* Section 9 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">
+              9. Changes to This Policy
+            </h2>
+            <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              We may update this policy as necessary. You will be notified of
+              significant changes via email or in-app notification.
+            </p>
+
+            {/* Section 10 */}
+            <h2 className="text-2xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">10. Contact Us</h2>
+            <p className="mb-2 text-gray-600 dark:text-gray-400">If you have any questions, contact us at:</p>
+            <p className="mb-1">
+              <strong>
+                <a href="mailto:fitcrypt.app@gmail.com" className="text-primary-600 dark:text-primary-400 hover:underline">fitcrypt.app@gmail.com</a>
+              </strong>
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
