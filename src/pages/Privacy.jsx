@@ -1,9 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SEO from "../component/SEO";
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300 relative overflow-hidden">
+      <SEO 
+        title="Privacy Policy - FitCrypt"
+        description="Read FitCrypt's Privacy Policy. We use client-side encryption to ensure we cannot access your health data. Your privacy is our priority."
+        keywords="privacy policy, data privacy, encrypted health data, client-side encryption"
+        url="https://fitcrypt.app/privacy-policy"
+      />
       {/* Abstract Background Shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <motion.div 

@@ -1,5 +1,6 @@
 import React from "react";
 import Legends from "../component/Legends";
+import SEO from "../component/SEO";
 
 function Inspiration() {
   const legends = [
@@ -210,7 +211,17 @@ function Inspiration() {
     },
   ];
 
-  return <Legends legends={legends} />;
+  return (
+    <>
+      <SEO 
+        title="Inspiration - FitCrypt | Legends of Fitness"
+        description="Get inspired by fitness legends like Chris Bumstead, Bruce Lee, and David Goggins. Discover their philosophies and achievements."
+        keywords="fitness inspiration, workout motivation, fitness legends, bodybuilding icons"
+        url="https://fitcrypt.app/inspiration"
+      />
+      <Legends legends={legends} />
+    </>
+  );
 }
 
 export default Inspiration;

@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../component/SEO";
 
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300 relative overflow-hidden">
+      <SEO 
+        title="Terms of Service - FitCrypt"
+        description="Read FitCrypt's Terms of Service. Understand your rights and responsibilities when using our privacy-focused fitness app."
+        keywords="terms of service, user agreement, fitcrypt terms"
+        url="https://fitcrypt.app/terms-of-service"
+      />
       {/* Abstract Background Shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <motion.div 

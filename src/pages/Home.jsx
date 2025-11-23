@@ -7,10 +7,16 @@ import HealthObjective from "../component/HealthObjective";
 import WorkoutSlider from "../component/WorkoutSlider";
 import CTA from "../component/CTA";
 import { motion } from "framer-motion";
+import SEO from "../component/SEO";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO 
+        title="FitCrypt - Your Fitness Journey, Truly Private"
+        description="Track workouts, achieve fitness goals, and maintain complete privacy with FitCrypt's military-grade encryption. A modern, privacy-first fitness tracking app."
+        keywords="fitness tracker, workout tracker, encrypted fitness app, privacy fitness, secure workout tracker"
+      />
       {/* Fixed Background Shapes */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div 

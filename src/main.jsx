@@ -3,6 +3,7 @@ import App from "./App.jsx";
 import ReactDOM from "react-dom/client";
 import React from "react";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
+import { HelmetProvider } from 'react-helmet-async';
     
 import {
   Route,
@@ -36,8 +37,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Home, ArrowLeft } from "lucide-react";
+import SEO from "../component/SEO";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 flex items-center justify-center p-4 relative overflow-hidden transition-colors duration-300">
+      <SEO 
+        title="Page Not Found - FitCrypt"
+        description="The page you are looking for does not exist. Return to FitCrypt home."
+        keywords="404, page not found"
+      />
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(253,105,52,0.05),transparent_50%)]"></div>
