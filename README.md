@@ -218,8 +218,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-- **Website**: [fitcrypt.com](https://fitcrypt.com)
-- **Email**: support@fitcrypt.com
+- **Website**: [fitcrypt.app](https://fitcrypt.app)
+- **Email**: fitcrypt.app@gmail.com
 - **GitHub**: [@fitcrypt](https://github.com/fitcrypt)
 
 ## 🙏 Acknowledgments
