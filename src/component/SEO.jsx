@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
 export default function SEO({ 
@@ -11,7 +10,7 @@ export default function SEO({
   url = 'https://fitcrypt.app'
 }) {
   return (
-    <Helmet>
+    <>
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name='description' content={description} />
@@ -34,7 +33,7 @@ export default function SEO({
       
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
-    </Helmet>
+    </>
   );
 }
 
