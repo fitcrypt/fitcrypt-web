@@ -5,54 +5,54 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-950 text-gray-600 dark:text-gray-400 py-16 px-6 transition-colors duration-300 border-t border-gray-100 dark:border-gray-900">
+    <footer className="bg-gray-50 dark:bg-white/[0.01] text-gray-500 dark:text-gray-400 py-16 px-6 sm:px-8 lg:px-16 transition-colors duration-500 border-t border-gray-100 dark:border-white/5">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Column */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
+          <div className="space-y-5">
+            <div className="flex items-center gap-2.5">
               <img
                 src={spaceLogo}
                 alt="FitCrypt Logo"
-                className="w-8 h-8"
+                className="w-7 h-7"
               />
-              <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">FitCrypt</span>
+              <span className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight">FitCrypt</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Your private fitness journey—empowered by purpose, protected by
               encryption.
             </p>
-            <div className="flex gap-4">
-              <a href="https://x.com/fitcrypt_app" target="_blank" className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                <FaXTwitter className="text-lg" />
+            <div className="flex gap-3">
+              <a href="https://x.com/fitcrypt_app" target="_blank" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
+                <FaXTwitter className="text-base" />
               </a>
-              <a href="https://www.instagram.com/fitcrypt_app/" target="_blank" className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                <FaInstagram className="text-lg" />
+              <a href="https://www.instagram.com/fitcrypt_app/" target="_blank" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
+                <FaInstagram className="text-base" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+          <div className="space-y-5">
+            <h3 className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
               Product
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link to="/" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link to="/" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                   Features
                 </Link>
               </li>
               <li>
                 <Link
                   to="/about-us"
-                  className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
                 >
                   About Us
                 </Link>
@@ -61,23 +61,23 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+          <div className="space-y-5">
+            <h3 className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
               Resources
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li>
-                <Link to="/blog" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link to="/blog" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link to="/privacy-policy" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms-of-service" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link to="/terms-of-service" className="text-sm hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                   Terms of Service
                 </Link>
               </li>
@@ -85,13 +85,13 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+          <div className="space-y-5">
+            <h3 className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
               Contact
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li className="text-sm">
-                <a href="mailto:fitcrypt.app@gmail.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+                <a href="mailto:fitcrypt.app@gmail.com" className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                   fitcrypt.app@gmail.com
                 </a>
               </li>
@@ -101,13 +101,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="pt-8 border-t border-gray-100 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div className="pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <div>© {new Date().getFullYear()} FitCrypt. All rights reserved.</div>
-          <div className="flex gap-8">
-            <Link to="/privacy-policy" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+          <div className="flex gap-6">
+            <Link to="/privacy-policy" className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
               Privacy
             </Link>
-            <Link to="/terms-of-service" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+            <Link to="/terms-of-service" className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
               Terms
             </Link>
           </div>

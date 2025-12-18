@@ -50,8 +50,8 @@ export default function WorkoutSlider({ className }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-transparent transition-colors duration-300 py-24">
-      <div className={`max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 ${className}`}>
+    <div className="section-padding bg-white dark:bg-transparent transition-colors duration-500">
+      <div className={`max-w-7xl mx-auto ${className}`}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* LEFT CONTENT */}
           <div className="lg:col-span-4 flex flex-col justify-center h-full">
@@ -62,10 +62,10 @@ export default function WorkoutSlider({ className }) {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight">
                 Move to
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-orange-500">Maintain</span>
+                <span className="gradient-text">Maintain</span>
               </h2>
 
               {/* Mobile Slider */}
@@ -73,7 +73,7 @@ export default function WorkoutSlider({ className }) {
                 <SingleSlider slides={slides} />
               </div>
 
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
                 Energize your lifestyle, embrace movement for a healthier you.
                 Get motivated, stay active, and achieve your goals.
               </p>
@@ -81,20 +81,20 @@ export default function WorkoutSlider({ className }) {
               <Link to="/about-us" className="inline-flex">
                 <button className="btn-primary flex items-center gap-2 group">
                   About Us
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </Link>
 
               {/* Slider Indicators (Desktop) */}
-              <div className="hidden lg:flex gap-3 pt-8">
+              <div className="hidden lg:flex gap-2 pt-6">
                 {slides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                    className={`h-1 rounded-full transition-all duration-500 ${
                       i === activeIndex 
-                        ? "w-12 bg-gray-900 dark:bg-white" 
-                        : "w-4 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+                        ? "w-10 bg-primary-500" 
+                        : "w-4 bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />
@@ -104,7 +104,7 @@ export default function WorkoutSlider({ className }) {
           </div>
 
           {/* RIGHT SLIDER (Desktop) */}
-          <div className="hidden lg:block lg:col-span-8 h-[600px] rounded-3xl overflow-hidden">
+          <div className="hidden lg:block lg:col-span-8 h-[550px] rounded-2xl overflow-hidden">
             <GridSlider
               className="h-full w-full"
               activeIndex={activeIndex}

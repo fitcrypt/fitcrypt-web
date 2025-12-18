@@ -6,6 +6,30 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: 'index.html',
+      output: {
+        // Manual chunk splitting for better caching
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-ui': ['lucide-react', 'react-icons', 'swiper'],
+        },
+      },
     },
+    // Minify and optimize
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Generate source maps for debugging (can disable in production)
+    sourcemap: false,
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
   },
 });

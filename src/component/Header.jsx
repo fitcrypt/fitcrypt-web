@@ -9,7 +9,7 @@ import { useTheme } from "../context/ThemeContext";
 
 const navItems = [
   { name: "Home", slug: "/" },
-  { name: "About Us", slug: "/about-us" },
+  { name: "About", slug: "/about-us" },
   { name: "Challenges", slug: "/challenges" },
   { name: "Inspiration", slug: "/inspiration" },
 ];
@@ -23,7 +23,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,69 +32,74 @@ function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+          scrolled 
+            ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/5" 
+            : "bg-transparent border-b border-transparent"
         }`}
       >
-        <div className="flex items-center justify-between h-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between h-16 md:h-20 px-6 sm:px-8 lg:px-16 max-w-7xl mx-auto">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <img
               src={Logo}
               alt="logo"
-              className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
+              className="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-110"
             />
-            <span className="font-bold text-lg text-gray-900 dark:text-white tracking-tight">
+            <span className="font-semibold text-base text-gray-900 dark:text-white tracking-tight">
               FitCrypt
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <NavLink 
                 key={item.slug} 
                 to={item.slug}
                 className={({ isActive }) => 
-                  `text-sm font-medium transition-colors duration-200 ${
+                  `px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     isActive 
-                      ? "text-gray-900 dark:text-white" 
-                      : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                      ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10" 
+                      : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
                   }`
                 }
               >
                 {item.name}
               </NavLink>
             ))}
-            
+          </nav>
+
+          {/* Right Side */}
+          <div className="flex items-center gap-2">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
+              className="p-2.5 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
               aria-label="Toggle theme"
             >
-              {isDark ? (
-                <FiSun className="w-5 h-5" />
-              ) : (
-                <FiMoon className="w-5 h-5" />
-              )}
+              <motion.div
+                key={isDark ? "dark" : "light"}
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isDark ? (
+                  <FiSun className="w-[18px] h-[18px]" />
+                ) : (
+                  <FiMoon className="w-[18px] h-[18px]" />
+                )}
+              </motion.div>
             </button>
-          </nav>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-gray-500 dark:text-gray-400"
-            >
-              {isDark ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
-            </button>
+            {/* Mobile Menu Toggle */}
             <button 
               onClick={handleMenuToggle} 
-              className="p-2 text-gray-900 dark:text-white"
+              className="md:hidden p-2.5 rounded-full text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
               aria-label="Toggle menu"
             >
-              <FiMenu className="w-6 h-6" />
+              <FiMenu className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -108,43 +113,50 @@ function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={handleMenuToggle}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[55] md:hidden"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[55] md:hidden"
             />
             
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed inset-y-0 right-0 z-[60] w-full sm:w-80 bg-white dark:bg-gray-900 md:hidden border-l border-gray-100 dark:border-gray-800"
+              transition={{ type: "spring", stiffness: 400, damping: 40 }}
+              className="fixed inset-y-0 right-0 z-[60] w-full sm:w-80 bg-white dark:bg-[#0a0a0a] md:hidden border-l border-gray-100 dark:border-white/5"
             >
-              <div className="flex justify-between items-center h-20 px-6 border-b border-gray-100 dark:border-gray-800">
-                <span className="font-bold text-lg text-gray-900 dark:text-white">Menu</span>
+              <div className="flex justify-between items-center h-16 px-6 border-b border-gray-100 dark:border-white/5">
+                <span className="font-semibold text-base text-gray-900 dark:text-white">Menu</span>
                 <button
                   onClick={handleMenuToggle}
-                  className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                  className="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 rounded-full transition-all duration-300"
                 >
-                  <IoClose className="w-6 h-6" />
+                  <IoClose className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="flex flex-col p-6 gap-2">
-                {navItems.map((item) => (
-                  <NavLink
+              <div className="flex flex-col p-4 gap-1">
+                {navItems.map((item, index) => (
+                  <motion.div
                     key={item.slug}
-                    to={item.slug}
-                    onClick={() => setIsNavVisible(false)}
-                    className={({ isActive }) =>
-                      `px-4 py-3 rounded-xl text-base font-medium transition-colors ${
-                        isActive
-                          ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
-                          : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50"
-                      }`
-                    }
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
                   >
-                    {item.name}
-                  </NavLink>
+                    <NavLink
+                      to={item.slug}
+                      onClick={() => setIsNavVisible(false)}
+                      className={({ isActive }) =>
+                        `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                          isActive
+                            ? "bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white"
+                            : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white"
+                        }`
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
