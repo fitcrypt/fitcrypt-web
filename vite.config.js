@@ -11,7 +11,7 @@ export default defineConfig({
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           'vendor-motion': ['framer-motion'],
-          'vendor-ui': ['lucide-react', 'react-icons', 'swiper'],
+          'vendor-ui': ['lucide-react', 'swiper'],
         },
       },
     },
