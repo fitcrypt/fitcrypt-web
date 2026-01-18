@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://fitcrypt.app/</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- About Us -->
   <url>
     <loc>https://fitcrypt.app/about-us</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- Blog -->
   <url>
     <loc>https://fitcrypt.app/blog</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- Challenges -->
   <url>
     <loc>https://fitcrypt.app/challenges</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- Inspiration -->
   <url>
     <loc>https://fitcrypt.app/inspiration</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -47,7 +47,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://fitcrypt.app/privacy</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -55,7 +55,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://fitcrypt.app/terms-of-service</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

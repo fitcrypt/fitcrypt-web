@@ -8,19 +8,31 @@ export default {
     extend: {
       colors: {
         primary: {
-          50:  '#fff5f0',
-          100: '#ffe4d9',
-          200: '#ffc4a9',
-          300: '#ffa179',
-          400: '#ff7c4e',
-          500: '#fd6934', // your base
-          600: '#e05129',
-          700: '#be3c1f',
-          800: '#9b2c16',
-          900: '#771c0e',
+          50: '#fef4f0',
+          100: '#fde3da',
+          200: '#fbc4b5',
+          300: '#f79c86',
+          400: '#f46d4a',
+          500: '#F2632B', // Primary from new logo
+          600: '#d95020',
+          700: '#b5411a',
+          800: '#913418',
+          900: '#772c17',
+        },
+        accent: {
+          50: '#faf6f3',
+          100: '#f0e5de',
+          200: '#e0c9ba',
+          300: '#cba68f',
+          400: '#b37d5f',
+          500: '#985C40', // Accent from new logo
+          600: '#7d4a34',
+          700: '#633b2a',
+          800: '#4d2e22',
+          900: '#3d261c',
         },
         background: {
-          50:  '#fafafa',
+          50: '#fafafa',
           100: '#f5f5f5',
           200: '#eeeeee',
           300: '#e0e0e0',
@@ -32,7 +44,7 @@ export default {
           900: '#212121',
         },
         onPrimary: "#eef2f5",
-        onBackground:"#696969",
+        onBackground: "#696969",
         secondary: "#dbff02",
         secondaryBackground: "#000000",
       },

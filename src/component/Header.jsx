@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FiMenu, FiMoon, FiSun } from "react-icons/fi";
-import { IoClose } from "react-icons/io5";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from "../assets/space_logo_100.svg";
+// import Logo from "../assets/space_logo_100.svg";
+import Logo from "../assets/new-logo.svg";
 import { useTheme } from "../context/ThemeContext";
 
 const navItems = [
@@ -32,36 +32,36 @@ function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled 
-            ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/5" 
-            : "bg-transparent border-b border-transparent"
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
+          ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/5"
+          : "bg-transparent border-b border-transparent"
+          }`}
       >
         <div className="flex items-center justify-between h-16 md:h-20 px-6 sm:px-8 lg:px-16 max-w-7xl mx-auto">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <img
-              src={Logo}
-              alt="logo"
-              className="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-110"
-            />
-            <span className="font-semibold text-base text-gray-900 dark:text-white tracking-tight">
-              FitCrypt
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <img
+                src={Logo}
+                alt="FitCrypt Logo"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <span className="font-bold text-xl text-gray-900 dark:text-white tracking-tight hidden sm:block">
+              Fit<span className="text-primary-500">Crypt</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <NavLink 
-                key={item.slug} 
+              <NavLink
+                key={item.slug}
                 to={item.slug}
-                className={({ isActive }) => 
-                  `px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    isActive 
-                      ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10" 
-                      : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive
+                    ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10"
+                    : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
                   }`
                 }
               >
@@ -86,20 +86,20 @@ function Header() {
                 transition={{ duration: 0.2 }}
               >
                 {isDark ? (
-                  <FiSun className="w-[18px] h-[18px]" />
+                  <Sun className="w-[18px] h-[18px]" />
                 ) : (
-                  <FiMoon className="w-[18px] h-[18px]" />
+                  <Moon className="w-[18px] h-[18px]" />
                 )}
               </motion.div>
             </button>
 
             {/* Mobile Menu Toggle */}
-            <button 
-              onClick={handleMenuToggle} 
+            <button
+              onClick={handleMenuToggle}
               className="md:hidden p-2.5 rounded-full text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
               aria-label="Toggle menu"
             >
-              <FiMenu className="w-5 h-5" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -117,7 +117,7 @@ function Header() {
               onClick={handleMenuToggle}
               className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[55] md:hidden"
             />
-            
+
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -131,7 +131,7 @@ function Header() {
                   onClick={handleMenuToggle}
                   className="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 rounded-full transition-all duration-300"
                 >
-                  <IoClose className="w-5 h-5" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
@@ -147,10 +147,9 @@ function Header() {
                       to={item.slug}
                       onClick={() => setIsNavVisible(false)}
                       className={({ isActive }) =>
-                        `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                          isActive
-                            ? "bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white"
-                            : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white"
+                        `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive
+                          ? "bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white"
+                          : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white"
                         }`
                       }
                     >

@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 
+// Optimize Cloudinary URLs for better performance
+const optimizeCloudinaryUrl = (url, width = 800) => {
+  if (!url || !url.includes('cloudinary.com')) return url;
+  // Insert transformation parameters after /upload/
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`);
+};
+
 export default function GridSlides({ className, card }) {
   return (
     <div className={`grid grid-cols-12 gap-4 w-full h-full p-2 ${className}`}>
@@ -9,8 +16,10 @@ export default function GridSlides({ className, card }) {
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.7 }}
-          src={card.image}
+          src={optimizeCloudinaryUrl(card.image, 700)}
           alt="Workout"
+          loading="lazy"
+          decoding="async"
           className="object-cover w-full h-full"
         />
       </div>
@@ -31,8 +40,10 @@ export default function GridSlides({ className, card }) {
           <motion.img
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.7 }}
-            src={card.verticalImage}
+            src={optimizeCloudinaryUrl(card.verticalImage, 400)}
             alt="Exercise"
+            loading="lazy"
+            decoding="async"
             className="object-cover w-full h-full"
           />
         </div>

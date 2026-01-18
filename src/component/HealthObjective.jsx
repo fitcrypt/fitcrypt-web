@@ -1,6 +1,4 @@
-import { GoGoal } from "react-icons/go";
-import { LiaBrainSolid } from "react-icons/lia";
-import { TbMoodCog } from "react-icons/tb";
+import { Target, Brain, Settings2 } from "lucide-react";
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -27,17 +25,17 @@ export default function HealthObjective() {
 
         <div className="grid md:grid-cols-3 gap-5">
           <ObjectiveCard
-            icon={<GoGoal className="h-5 w-5" />}
+            icon={<Target className="h-5 w-5" />}
             title="Purposeful Goals"
             description="Set intentions aligned with your values, not just arbitrary targets."
           />
           <ObjectiveCard
-            icon={<LiaBrainSolid className="h-5 w-5" />}
+            icon={<Brain className="h-5 w-5" />}
             title="Body Awareness"
             description="Develop deeper understanding of your energy and recovery patterns."
           />
           <ObjectiveCard
-            icon={<TbMoodCog className="h-5 w-5" />}
+            icon={<Settings2 className="h-5 w-5" />}
             title="Adaptive Training"
             description="Programs that evolve with your changing needs and intuition."
           />

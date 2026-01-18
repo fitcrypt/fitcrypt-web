@@ -15,14 +15,8 @@ export default defineConfig({
         },
       },
     },
-    // Minify and optimize
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    // Minify with esbuild (faster, bundled with Vite)
+    minify: 'esbuild',
     // Enable CSS code splitting
     cssCodeSplit: true,
     // Generate source maps for debugging (can disable in production)

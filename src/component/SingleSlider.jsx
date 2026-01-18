@@ -4,6 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import { Autoplay, Scrollbar } from "swiper/modules";
 
+// Optimize Cloudinary URLs for better performance
+const optimizeCloudinaryUrl = (url, width = 600) => {
+  if (!url || !url.includes('cloudinary.com')) return url;
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`);
+};
+
 export default function SingleSlider({ className, slides }) {
   const [sliderIndex, setSliderIndex] = useState(0);
 
@@ -36,7 +42,13 @@ export default function SingleSlider({ className, slides }) {
               transition={{ duration: 1 }}
             >
               <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
-                <img src={card.image} alt="image" className="rounded-2xl" />
+                <img
+                  src={optimizeCloudinaryUrl(card.image)}
+                  alt="Workout"
+                  loading="lazy"
+                  decoding="async"
+                  className="rounded-2xl w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </SwiperSlide>
