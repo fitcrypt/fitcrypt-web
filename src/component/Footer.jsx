@@ -25,10 +25,10 @@ export default function Footer() {
               encryption.
             </p>
             <div className="flex gap-3">
-              <a href="https://x.com/fitcrypt_app" target="_blank" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
+              <a href="https://x.com/fitcrypt_app" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="https://www.instagram.com/fitcrypt_app/" target="_blank" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
+              <a href="https://www.instagram.com/fitcrypt_app/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
                 <Instagram className="w-4 h-4" />
               </a>
             </div>

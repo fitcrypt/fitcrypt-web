@@ -18,7 +18,7 @@ function EncryptedJourney() {
             Your Data, <span className="gradient-text">Your Control</span>
           </h2>
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            End-to-end encryption meets intuitive design. Privacy is a fundamental right, not a feature.
+            Military-grade encryption meets intuitive design. Privacy is a fundamental right, not a feature.
           </p>
         </motion.div>
 
@@ -38,10 +38,10 @@ function EncryptedJourney() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-                    End-to-End Encryption
+                    Secure Server Encryption
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
-                    Every workout is encrypted on your device before it touches our servers. We cannot access your data.
+                    Your data is encrypted the moment it reaches our servers using AES-256 encryption—the same standard used by banks and governments.
                   </p>
                 </div>
               </div>

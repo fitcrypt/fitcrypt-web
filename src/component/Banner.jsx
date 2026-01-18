@@ -107,7 +107,7 @@ export default function Banner() {
             className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             Track workouts, achieve goals, and maintain complete privacy with
-            end-to-end encryption. Your data stays yours.
+            secure encryption. Your data stays yours.
           </motion.p>
 
           {/* Mobile App Coming Soon */}
@@ -148,7 +148,7 @@ export default function Banner() {
           >
             <div className="flex items-center gap-2.5">
               <Lock className="w-4 h-4 text-primary-500/70" />
-              <span>End-to-End Encrypted</span>
+              <span>Securely Encrypted</span>
             </div>
             <div className="flex items-center gap-2.5">
               <Eye className="w-4 h-4 text-primary-500/70" />

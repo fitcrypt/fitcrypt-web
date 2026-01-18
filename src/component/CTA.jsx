@@ -5,8 +5,8 @@ const CTA = () => {
   return (
     <div className="section-padding bg-white dark:bg-transparent transition-colors duration-500 relative overflow-hidden">
       {/* Subtle gradient */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary-500/5 dark:bg-primary-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[300px] bg-primary-500/5 dark:bg-primary-500/10 rounded-full blur-3xl" />
       </div>
 
       <motion.div

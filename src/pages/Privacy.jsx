@@ -8,8 +8,8 @@ export default function Privacy() {
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-300 relative overflow-hidden">
       <SEO
         title="Privacy Policy - FitCrypt"
-        description="Read FitCrypt's Privacy Policy. We use client-side encryption to ensure we cannot access your health data. Your privacy is our priority."
-        keywords="privacy policy, data privacy, encrypted health data, client-side encryption"
+        description="Read FitCrypt's Privacy Policy. We use secure server-side encryption to protect your health data. Your privacy is our priority."
+        keywords="privacy policy, data privacy, encrypted health data, server-side encryption"
         url="https://fitcrypt.app/privacy-policy"
       />
       {/* Subtle Background */}
@@ -52,14 +52,13 @@ export default function Privacy() {
             </ul>
 
             <h3 className="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">
-              b. Encrypted Health Data (Client-Side Encrypted):
+              b. Encrypted Health Data (Server-Side Encrypted):
             </h3>
             <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
               All your health-related data — including workout logs, training
               plans, goals, progress, etc. — is encrypted{" "}
-              <strong>on your device</strong> using{" "}
-              <strong>client-side encryption</strong>. We cannot read this data
-              and cannot recover it if you lose access to your credentials.
+              <strong>on our servers</strong> using{" "}
+              <strong>AES-256 encryption</strong>, the same standard used by banks and governments.
             </p>
 
             <h3 className="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">
@@ -85,12 +84,10 @@ export default function Privacy() {
 
             {/* Section 3 */}
             <h2 className="text-2xl font-semibold mt-12 mb-6 text-gray-900 dark:text-white">
-              3. Client-Side Encryption Explained
+              3. Server-Side Encryption Explained
             </h2>
             <p className="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-              Client-side encryption ensures that your health data is encrypted
-              before it leaves your device. Only you can decrypt it using your
-              credentials. We cannot read or recover this data.
+              Your health data is encrypted the moment it reaches our servers using AES-256 encryption—the same standard used by banks and governments. Your data is protected both in transit (via HTTPS) and at rest on our secure servers.
             </p>
 
             {/* Section 4 */}
@@ -122,10 +119,10 @@ export default function Privacy() {
               6. Security Practices
             </h2>
             <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400">
-              <li>End-to-end encryption of health data</li>
+              <li>AES-256 encryption of health data at rest</li>
               <li>HTTPS-only communication</li>
               <li>Regular security audits</li>
-              <li>Client-side key management</li>
+              <li>Secure server infrastructure</li>
             </ul>
 
             {/* Section 7 */}
