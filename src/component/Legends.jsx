@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaInstagram, FaLink, FaTimes } from "react-icons/fa";
+import { Instagram, Link2, X } from "lucide-react";
 import { Flame, Award, Quote, Play, ExternalLink } from "lucide-react";
+
+// Optimize Cloudinary URLs for better performance
+const optimizeCloudinaryUrl = (url, width = 400) => {
+  if (!url || !url.includes('cloudinary.com')) return url;
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`);
+};
 
 export default function Legends({ legends }) {
   const [selected, setSelected] = useState(null);
@@ -25,15 +31,15 @@ export default function Legends({ legends }) {
             <Flame className="w-4 h-4" />
             <span>Hall of Legends</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
             Inspired by the
             <br />
             <span className="gradient-text">Greatest Athletes</span>
           </h1>
-          
+
           <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto font-light">
-            Learn from pioneers who transformed fitness and pushed human limits. 
+            Learn from pioneers who transformed fitness and pushed human limits.
             Let their dedication and philosophy inspire your journey.
           </p>
         </motion.div>
@@ -54,12 +60,14 @@ export default function Legends({ legends }) {
             >
               <div className="aspect-[3/4] overflow-hidden relative">
                 <img
-                  src={legend.image}
+                  src={optimizeCloudinaryUrl(legend.image)}
                   alt={legend.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
-                
+
                 {/* Floating Badge */}
                 <div className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   <ExternalLink className="w-5 h-5 text-white" />
@@ -101,7 +109,7 @@ export default function Legends({ legends }) {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
               onClick={() => setSelected(null)}
             >
-              <div 
+              <div
                 className="bg-white dark:bg-[#0a0a0a] rounded-3xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden relative flex flex-col md:flex-row border border-white/10"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -110,7 +118,7 @@ export default function Legends({ legends }) {
                   onClick={() => setSelected(null)}
                   className="absolute top-4 right-4 z-50 p-2 bg-black/20 hover:bg-black/40 text-white rounded-full backdrop-blur-md transition-colors"
                 >
-                  <FaTimes className="w-5 h-5" />
+                  <X className="w-5 h-5" />
                 </button>
 
                 {/* Hero Image Side */}
@@ -223,7 +231,7 @@ export default function Legends({ legends }) {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-900 dark:text-white rounded-full font-medium transition-colors"
                           >
-                            <FaInstagram className="text-pink-600" /> 
+                            <Instagram className="text-pink-600 w-4 h-4" />
                             Instagram
                           </a>
                         )}
@@ -234,7 +242,7 @@ export default function Legends({ legends }) {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-900 dark:text-white rounded-full font-medium transition-colors"
                           >
-                            <FaLink className="text-gray-500" /> 
+                            <Link2 className="text-gray-500 w-4 h-4" />
                             Website
                           </a>
                         )}

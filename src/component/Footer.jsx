@@ -1,6 +1,5 @@
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import spaceLogo from "../assets/space_logo_100.svg";
+import { Instagram, Twitter } from "lucide-react";
+import Logo from "../assets/new-logo.svg";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -11,13 +10,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Column */}
           <div className="space-y-5">
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-3">
               <img
-                src={spaceLogo}
+                src={Logo}
                 alt="FitCrypt Logo"
-                className="w-7 h-7"
+                className="w-10 h-10 object-contain"
               />
-              <span className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight">FitCrypt</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
+                Fit<span className="text-primary-500">Crypt</span>
+              </span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Your private fitness journey—empowered by purpose, protected by
@@ -25,10 +26,10 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a href="https://x.com/fitcrypt_app" target="_blank" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
-                <FaXTwitter className="text-base" />
+                <Twitter className="w-4 h-4" />
               </a>
               <a href="https://www.instagram.com/fitcrypt_app/" target="_blank" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300">
-                <FaInstagram className="text-base" />
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>

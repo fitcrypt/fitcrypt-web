@@ -14,9 +14,11 @@ export default function AccessAnywhereSection() {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-orange-500/10 dark:from-primary-500/5 dark:to-orange-500/5 rounded-2xl transform rotate-2"></div>
-            <img 
-              src="https://res.cloudinary.com/dyqibxntm/image/upload/v1751350075/mobile_ivjisv.jpg" 
+            <img
+              src="https://res.cloudinary.com/dyqibxntm/image/upload/f_auto,q_auto,w_600/v1751350075/mobile_ivjisv.jpg"
               alt="Multi-device access"
+              loading="lazy"
+              decoding="async"
               className="relative rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-white/5"
             />
           </div>
