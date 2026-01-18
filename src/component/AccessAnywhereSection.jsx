@@ -44,7 +44,7 @@ export default function AccessAnywhereSection() {
           <ul className="space-y-4 pt-2">
             <li className="flex items-start gap-3">
               <div className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary-500"></div>
-              <span className="text-gray-600 dark:text-gray-300 text-sm">End-to-end encrypted sync between devices</span>
+              <span className="text-gray-600 dark:text-gray-300 text-sm">Securely encrypted sync between devices</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary-500"></div>

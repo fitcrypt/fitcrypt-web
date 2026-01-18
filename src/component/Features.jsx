@@ -42,7 +42,7 @@ export default function Features() {
             Comprehensive tools designed for your fitness journey with complete privacy.
           </p>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           <FeatureCard
             index={0}
@@ -60,7 +60,7 @@ export default function Features() {
             index={2}
             icon={<Shield className="h-5 w-5" />}
             title="Privacy First"
-            description="End-to-end encryption ensures your data stays yours."
+            description="Secure server-side encryption ensures your data stays protected."
           />
           <FeatureCard
             index={3}
